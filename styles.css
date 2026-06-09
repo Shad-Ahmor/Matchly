@@ -10,6 +10,7 @@
     --card-border: rgba(255, 255, 255, 0.08);
     --border-color: #334155;
     --shadow-color: rgba(0, 0, 0, 0.4);
+    --success-card-hover-border: rgba(255, 75, 125, 0.3);
     
     --sun-display: block;
     --moon-display: none;
@@ -24,6 +25,7 @@
     --card-border: rgba(0, 0, 0, 0.06);
     --border-color: #F0F0F0;
     --shadow-color: rgba(233, 64, 87, 0.05);
+    --success-card-hover-border: rgba(233, 64, 87, 0.2);
     
     --sun-display: none;
     --moon-display: block;
@@ -122,10 +124,16 @@ body {
     gap: 12px;
 }
 
+/* Make logo image circular with glowing effect */
 .logo-img {
-    height: 40px;
-    width: auto;
-    filter: drop-shadow(0 2px 8px rgba(255, 75, 125, 0.3));
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 10px rgba(255, 75, 125, 0.5);
+    padding: 2px;
+    background-color: #000;
 }
 
 .logo span {
@@ -252,7 +260,7 @@ body {
 
 /* 🚀 Hero Section Layout */
 .hero-section {
-    padding: 80px 24px 100px 24px;
+    padding: 100px 24px 120px 24px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -260,7 +268,7 @@ body {
 .hero-container {
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
-    gap: 60px;
+    gap: 80px;
     align-items: center;
 }
 
@@ -289,11 +297,11 @@ body {
 
 .hero-content h1 {
     font-family: var(--font-heading);
-    font-size: 58px;
+    font-size: 64px;
     font-weight: 900;
     line-height: 1.15;
     margin-bottom: 24px;
-    letter-spacing: -1.5px;
+    letter-spacing: -2px;
 }
 
 .hero-content h1 span {
@@ -312,7 +320,7 @@ body {
 /* 📱 Hero Visual (Floating Match Cards) */
 .hero-visual {
     position: relative;
-    height: 420px;
+    height: 440px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -320,18 +328,18 @@ body {
 
 .glow-ring {
     position: absolute;
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    border: 2px dashed rgba(255, 75, 125, 0.15);
+    border: 2px dashed rgba(255, 75, 125, 0.2);
     animation: rotateRing 20s linear infinite;
 }
 
 .heart-pulse-icon {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 75, 125, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 75, 125, 0.2) 0%, transparent 70%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -339,9 +347,9 @@ body {
 }
 
 .heart-pulse-icon ion-icon {
-    font-size: 52px;
+    font-size: 58px;
     color: var(--primary-color);
-    filter: drop-shadow(0 4px 12px rgba(255, 75, 125, 0.5));
+    filter: drop-shadow(0 4px 16px rgba(255, 75, 125, 0.6));
 }
 
 .floating-profile {
@@ -350,56 +358,181 @@ body {
     align-items: center;
     gap: 14px;
     background: var(--card-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border: 1px solid var(--card-border);
     border-radius: 20px;
     padding: 16px;
-    box-shadow: 0 15px 35px var(--shadow-color);
+    box-shadow: 0 20px 45px var(--shadow-color);
 }
 
 .profile-left {
-    top: 15%;
-    left: -5%;
+    top: 10%;
+    left: -10%;
     animation: floatLeftCard 6s ease-in-out infinite;
 }
 
 .profile-right {
-    bottom: 15%;
-    right: -5%;
+    bottom: 10%;
+    right: -10%;
     animation: floatRightCard 6s ease-in-out infinite;
 }
 
 .profile-avatar {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: rgba(255, 75, 125, 0.1);
+    background: rgba(255, 75, 125, 0.12);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .profile-details h3 {
     font-family: var(--font-heading);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 800;
 }
 
 .profile-details p {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-muted);
 }
 
 .match-score {
     background: var(--gradient-match);
     color: white;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 800;
     padding: 4px 8px;
     border-radius: 8px;
     margin-left: 8px;
+}
+
+/* Floating micro bubbles inside Hero visual */
+.mini-bubble {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.bubble-1 {
+    top: 15%;
+    right: 5%;
+    animation: float1 5s ease-in-out infinite;
+}
+
+.bubble-2 {
+    bottom: 15%;
+    left: 5%;
+    animation: float2 5.5s ease-in-out infinite;
+}
+
+.bubble-3 {
+    top: 60%;
+    left: 40%;
+    animation: float1 4s ease-in-out infinite;
+}
+
+/* 💖 Success Stories (Couples Show-off Section) */
+.success-section {
+    padding: 100px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid var(--border-color);
+}
+
+.success-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.success-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 36px 28px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.success-card::before {
+    content: '💍';
+    position: absolute;
+    font-size: 80px;
+    right: -10px;
+    bottom: -15px;
+    opacity: 0.04;
+    transform: rotate(-15deg);
+    pointer-events: none;
+}
+
+.success-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--success-card-hover-border);
+    box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+.couple-avatar-wrap {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: rgba(255, 75, 125, 0.06);
+    border: 2px dashed rgba(255, 75, 125, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.avatar-couple {
+    font-size: 32px;
+}
+
+.success-card h3 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.tag-wedding {
+    display: inline-block;
+    background: rgba(255, 75, 125, 0.08);
+    color: var(--primary-color);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 30px;
+    margin-bottom: 18px;
+}
+
+.story-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.story-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-color);
+    opacity: 0.9;
 }
 
 /* 🎨 Features Section */
@@ -407,6 +540,7 @@ body {
     padding: 100px 24px;
     max-width: 1200px;
     margin: 0 auto;
+    border-top: 1px solid var(--border-color);
 }
 
 .section-title-wrap {
@@ -738,6 +872,18 @@ footer {
 }
 
 /* 💫 Animations */
+@keyframes float1 {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(4deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes float2 {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(-4deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
 @keyframes pulse {
     0% { transform: scale(1); opacity: 1; }
     50% { transform: scale(1.3); opacity: 0.5; }
@@ -783,7 +929,7 @@ footer {
         font-size: 44px;
     }
     
-    .features-grid, .steps-grid {
+    .success-grid, .features-grid, .steps-grid {
         grid-template-columns: 1fr;
         gap: 24px;
     }
