@@ -3,54 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Matchly - Dating & Matrimonial App. Find your perfect connection, secure chats, verified profiles. Download now!">
-    <title>Matchly — Find Your Perfect Connection</title>
+    <title>Matchly — Premium Dating & Matrimonial Matchmaking App</title>
+    
+    <!-- Meta tags for Search Engine Optimization (SEO) -->
+    <meta name="description" content="Matchly is the premier dating & matrimonial matchmaking app. Find serious relationships, casual dating, verify profiles, secure chats, and match with singles nearby.">
+    <meta name="keywords" content="matchly, dating app, matrimonial app, shaadi, matchmaking, search partners, find bride, find groom, dating in india, marriage website, secure dating, relationship, single parents dating, local dating, online matches">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gdlsofts.com">
+    
+    <!-- Open Graph (Facebook/LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Matchly — Premium Dating & Matrimonial Matchmaking App">
+    <meta property="og:description" content="Find serious relationships, casual dating, verified profiles, and secure matchmaking. Download Matchly today!">
+    <meta property="og:url" content="https://gdlsofts.com">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Ionicons for modern icons -->
+    <!-- Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Background Elements -->
+<body class="dark-theme">
+    <!-- Ambient Blur Backgrounds -->
     <div class="bg-glow bg-glow-1"></div>
     <div class="bg-glow bg-glow-2"></div>
     <div class="bg-grid"></div>
 
-    <!-- Header / Navbar -->
+    <!-- Transparent Fixed Header -->
     <header class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <div class="logo-icon">
-                    <ion-icon name="heart"></ion-icon>
-                </div>
+                <img src="matchly_logo.png" alt="Matchly Logo" class="logo-img">
                 <span>Matchly</span>
             </div>
-            <nav class="nav-menu">
-                <a href="#features">Features</a>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#about">About</a>
-                <a href="https://play.google.com/store/apps/details?id=com.matchly.gdlsofts" class="btn btn-secondary nav-btn">Download App</a>
-            </nav>
+            
+            <div class="nav-right">
+                <nav class="nav-menu">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#seo-directory">Search Index</a>
+                </nav>
+                
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                    <ion-icon name="sunny-outline" class="sun-icon"></ion-icon>
+                    <ion-icon name="moon-outline" class="moon-icon"></ion-icon>
+                </button>
+                
+                <a href="https://play.google.com/store/apps/details?id=com.matchly.gdlsofts" class="btn btn-secondary nav-btn">Download</a>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Main Hero Section -->
     <section class="hero-section">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="badge-new">
                     <span class="badge-dot"></span>
-                    <span>Now live on Google Play Store</span>
+                    <span>Premium Dating & Matrimony Live</span>
                 </div>
-                <h1>Find Your <span>Perfect</span> Connection</h1>
-                <p>Matchly combines smart matching algorithms with absolute privacy to help you find meaningful relationships. Chat securely, verify profiles, and meet your match today.</p>
+                <h1>Find Love That's <span>Genuine</span> & <span>Lasting</span></h1>
+                <p>Matchly bridges the gap between casual dating and traditional matrimony. We build secure, verified connections with an advanced algorithm designed around your preferences, values, and lifestyle.</p>
                 
                 <div class="hero-cta">
                     <a href="https://play.google.com/store/apps/details?id=com.matchly.gdlsofts" class="btn btn-primary">
@@ -64,100 +83,102 @@
             </div>
             
             <div class="hero-visual">
-                <!-- Floating Glassmorphism Cards -->
-                <div class="floating-card card-1">
-                    <div class="card-avatar">👩</div>
-                    <div class="card-info">
-                        <h4>Aanya, 24</h4>
-                        <p>📍 Delhi &bull; Online</p>
-                    </div>
-                    <div class="card-badge">98% Match</div>
+                <!-- Outer floating decorative elements -->
+                <div class="glow-ring"></div>
+                <div class="heart-pulse-icon">
+                    <ion-icon name="heart"></ion-icon>
                 </div>
                 
-                <div class="floating-card card-2">
-                    <div class="card-avatar">👨</div>
-                    <div class="card-info">
-                        <h4>Kabir, 26</h4>
-                        <p>📍 Mumbai &bull; Active</p>
+                <!-- Matching Floating Cards (Matchly Profile Style) -->
+                <div class="floating-profile profile-left">
+                    <div class="profile-avatar">👩</div>
+                    <div class="profile-details">
+                        <h3>Sneha Sharma, 25</h3>
+                        <p>📍 Delhi &bull; Professional</p>
                     </div>
-                    <div class="card-badge">95% Match</div>
+                    <div class="match-score">96% Match</div>
                 </div>
-
-                <div class="heart-center">
-                    <ion-icon name="heart"></ion-icon>
+                
+                <div class="floating-profile profile-right">
+                    <div class="profile-avatar">👨</div>
+                    <div class="profile-details">
+                        <h3>Rohan Mehta, 27</h3>
+                        <p>📍 Bangalore &bull; Engineer</p>
+                    </div>
+                    <div class="match-score">92% Match</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- App Features Section -->
     <section id="features" class="features-section">
-        <div class="section-header">
-            <h2>Why Choose Matchly?</h2>
-            <p>Designed with modern privacy, premium aesthetics, and smart matching features.</p>
+        <div class="section-title-wrap">
+            <h2>Crafted For Meaningful Dating</h2>
+            <p>We combine security, verification, and modern UI to provide an outstanding matchmaking experience.</p>
         </div>
         
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon pink">
-                    <ion-icon name="sparkles"></ion-icon>
+                <div class="feat-icon pink-bg">
+                    <ion-icon name="checkmark-done-circle"></ion-icon>
                 </div>
-                <h3>Smart Matchmaker</h3>
-                <p>Our algorithm matches you based on deep compatibility, core values, and mutual preferences.</p>
+                <h3>100% Profile Verification</h3>
+                <p>No fake profiles or catfishing. We ensure every profile is verified using advanced systems to maintain trust and safety.</p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon purple">
-                    <ion-icon name="shield-checkmark"></ion-icon>
+                <div class="feat-icon orange-bg">
+                    <ion-icon name="heart-circle"></ion-icon>
                 </div>
-                <h3>Verified Profiles</h3>
-                <p>Say goodbye to catfishing. Every user is verified to ensure a genuine and safe matchmaking environment.</p>
+                <h3>Dating & Matrimony Hybrid</h3>
+                <p>Whether you're looking to date casually or find a lifetime partner for marriage, Matchly filters preferences for both.</p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon blue">
-                    <ion-icon name="chatbubbles"></ion-icon>
+                <div class="feat-icon purple-bg">
+                    <ion-icon name="shield-lock"></ion-icon>
                 </div>
-                <h3>Secure Messaging</h3>
-                <p>Your conversations are fully protected. Share photos, voice messages, and texts with complete security.</p>
+                <h3>Privacy First Chats</h3>
+                <p>Chat securely with end-to-end encryption. Control who sees your profile, photos, and location details with granular privacy toggles.</p>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
+    <!-- How It Works Section -->
     <section id="how-it-works" class="how-section">
-        <div class="section-header">
-            <h2>How Matchly Works</h2>
-            <p>Three simple steps to finding your ideal partner.</p>
+        <div class="section-title-wrap">
+            <h2>Three Steps to Your Perfect Match</h2>
+            <p>Simple, elegant, and highly effective matchmaking process.</p>
         </div>
         
         <div class="steps-grid">
             <div class="step-card">
-                <div class="step-num">1</div>
-                <h3>Create Profile</h3>
-                <p>Set up your profile, add your interests, and share your verification details in under 2 minutes.</p>
+                <div class="step-badge">1</div>
+                <h3>Tell Us About Yourself</h3>
+                <p>Create your profile, select your hobbies, and answer compatibility questions to help our matching engine understand you.</p>
             </div>
             
             <div class="step-card">
-                <div class="step-num">2</div>
-                <h3>Discover Matches</h3>
-                <p>Browse through handpicked profiles tailored specifically to your preferences and location.</p>
+                <div class="step-badge">2</div>
+                <h3>Discover Curated Matches</h3>
+                <p>Browse through high-compatibility profiles selected specifically based on your unique algorithm results.</p>
             </div>
             
             <div class="step-card">
-                <div class="step-num">3</div>
-                <h3>Start Connecting</h3>
-                <p>Break the ice with our dynamic icebreakers and start your journey towards a meaningful connection.</p>
+                <div class="step-badge">3</div>
+                <h3>Connect & Meet</h3>
+                <p>Start a secure conversation, build comfort, and schedule dates safely inside our matching platform.</p>
             </div>
         </div>
     </section>
 
-    <!-- Download Banner -->
-    <section class="download-banner">
-        <div class="banner-content">
-            <h2>Start Your Love Story Today</h2>
-            <p>Download Matchly now and join thousands of singles finding their perfect match.</p>
-            <div class="banner-buttons">
+    <!-- Bottom Download CTA -->
+    <section class="banner-cta">
+        <div class="banner-inner">
+            <h2>Start Your Matchmaking Journey Today</h2>
+            <p>Join thousands of verified members finding love, matchmaking, and lifelong relationship connections on Matchly.</p>
+            <div class="banner-actions">
                 <a href="https://play.google.com/store/apps/details?id=com.matchly.gdlsofts" class="btn btn-primary">
                     <ion-icon name="logo-google-playstore" class="btn-icon"></ion-icon>
                     <div class="btn-text">
@@ -169,22 +190,143 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 1000+ SEO Tags Directory (Collapsible Footer Index) -->
+    <section id="seo-directory" class="seo-directory-section">
+        <div class="seo-container">
+            <button id="seo-toggle" class="seo-toggle-btn">
+                <span>Dating & Matrimony Search Index (1000+ Topics)</span>
+                <ion-icon name="chevron-down-outline" class="chevron-icon"></ion-icon>
+            </button>
+            
+            <div id="seo-content" class="seo-content-panel collapsed">
+                <div class="seo-grid">
+                    <!-- Column 1: Dating Apps & Online Dating -->
+                    <div class="seo-column">
+                        <h4>Dating Apps & Services</h4>
+                        <ul>
+                            <li>matchly dating app</li><li>best dating apps in india</li><li>free online dating services</li><li>local dating apps</li><li>popular dating apps</li><li>best dating apps for relationship</li><li>dating apps for serious relationships</li><li>dating sites in india</li><li>top dating websites</li><li>genuine dating apps</li><li>safe dating platforms</li><li>secure dating application</li><li>best dating apps for youth</li><li>dating apps for working professionals</li><li>dating app with verified profiles</li><li>no catfishing dating app</li><li>local singles search</li><li>meet local matches online</li><li>premium dating network</li><li>dating website near me</li><li>dating portal registration</li><li>free chat dating app</li><li>dating chat rooms free</li><li>secure dating matches</li><li>nearby dating matches</li><li>dating app matching algorithm</li><li>relationship compatibility dating</li><li>casual dating apps</li><li>serious dating website</li><li>verified matchmaker service</li>
+                            <!-- Bulk keywords for tag volume -->
+                            <li>online matchmaking app</li><li>chat with singles</li><li>relationship seeker platform</li><li>dating portal for adults</li><li>secure matchmaking server</li><li>india speed dating</li><li>blind date apps</li><li>anonymous dating online</li><li>profile verified dating</li><li>find partner for dating</li><li>verified romance app</li><li>digital matchmaker free</li><li>modern dating platform</li><li>location based dating</li><li>dating apps delhi</li><li>dating apps mumbai</li><li>dating apps Bangalore</li><li>dating apps pune</li><li>dating apps kolkata</li><li>dating apps hyderabad</li><li>dating apps chennai</li><li>dating apps jaipur</li><li>dating apps lucknow</li><li>dating apps indore</li><li>dating apps chandigarh</li><li>dating apps dehradun</li><li>dating apps kerala</li><li>dating apps gujarat</li><li>dating apps punjab</li><li>dating apps haryana</li><li>premium matchmaking site</li><li>local singles matching</li><li>date singles online</li><li>find romance online</li><li>true love match app</li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Matrimony & Shaadi -->
+                    <div class="seo-column">
+                        <h4>Matrimony & Matrimonial</h4>
+                        <ul>
+                            <li>best matrimonial sites</li><li>indian matrimonial app</li><li>premium matrimonial matchmaking</li><li>matrimony website registration</li><li>matrimonial portal for bride</li><li>matrimony portal for groom</li><li>shaadi matchmaking app</li><li>online shaadi search</li><li>matrimonial verified profiles</li><li>trusted matrimonial app</li><li>best matrimony for NRI</li><li>matrimony services in india</li><li>caste matrimony online</li><li>community matchmaking shaadi</li><li>matrimonial matching compatibility</li><li>matrimony bride search</li><li>matrimony groom finder</li><li>marriage bureau online</li><li>premium bride matchmaking</li><li>vip matrimony services</li><li>matrimonial profile maker</li><li>first marriage matchmaking</li><li>matrimony for second marriage</li><li>divorcee matrimonial app</li><li>widow matrimonial services</li><li>court marriage matchmaking</li><li>trusted shaadi matches</li><li>bengali matrimonial app</li><li>punjabi matrimonial app</li><li>marathi matrimonial app</li><li>tamil matrimonial app</li><li>telugu matrimonial app</li><li>kannada matrimonial app</li><li>gujarati matrimonial app</li><li>malayali matrimonial app</li>
+                            <!-- Bulk keywords for tag volume -->
+                            <li>hindi matrimonial site</li><li>oriya matrimonial portal</li><li>assamese matrimonial app</li><li>christian matrimonial registry</li><li>muslim matrimonial matchmaking</li><li>sikh matrimonial bureau</li><li>jain matrimonial portal</li><li>buddhist matrimonial service</li><li>lingayat matrimonial website</li><li>brahmin matrimonial service</li><li>rajput matrimonial matchmaking</li><li>kayastha matrimonial app</li><li>marwari matrimonial registry</li><li>agarwal matrimonial network</li><li>baniya matrimonial search</li><li>reddy matrimonial app</li><li>kamma matrimonial website</li><li>nair matrimonial services</li><li>ezhava matrimonial portal</li><li>nadar matrimonial register</li><li>thevar matrimonial matches</li><li>pillai matrimonial search</li><li>gounder matrimonial site</li><li>iyengar matrimonial app</li><li>iyer matrimonial portal</li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Matchmaking & Relationships -->
+                    <div class="seo-column">
+                        <h4>Matchmaking & Compatibility</h4>
+                        <ul>
+                            <li>advanced matching algorithm</li><li>relationship compatibility check</li><li>horoscope matching online</li><li>kundali matching shaadi</li><li>biodata for marriage maker</li><li>matrimonial biodata online</li><li>compatibility score dating</li><li>personality matchmaking</li><li>interest matching dating</li><li>lifestyle compatibility matches</li><li>hobbies matching app</li><li>professional matchmaking</li><li>doctor matrimonial service</li><li>engineer matrimonial app</li><li>mba matrimonial portal</li><li>ias ips matrimonial registry</li><li>government employee matrimony</li><li>corporate employee dating</li><li>high income singles dating</li><li>elite dating app india</li><li>elite matchmaking service</li><li>high society dating portal</li><li>verified matches only</li><li>safe matrimony registry</li><li>trusted profile matching</li><li>secure matchmaking software</li><li>matrimony photo privacy</li><li>dating profile enhancer</li><li>icebreaker questions dating</li><li>first date helper app</li>
+                            <!-- Bulk keywords for tag volume -->
+                            <li>first chat icebreakers</li><li>how to start conversation dating</li><li>dating tips for men</li><li>dating tips for women</li><li>relationship advice online</li><li>pre marriage counseling</li><li>post marriage compatibility</li><li>happy relationship match</li><li>soulmate finder online</li><li>twin flame matching app</li><li>true partner finder</li><li>life partner matchmaking</li><li>family verified shaadi</li><li>parent approved matrimonial</li><li>self registered matrimony</li><li>independent dating app</li><li>privacy focused dating</li><li>profile visibility control</li><li>block user dating app</li><li>report fake profile</li><li>secure messaging matrimony</li><li>audio call dating app</li><li>video call matchmaking</li><li>verified chat dating</li><li>matchly premium features</li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Localized Dating & Matrimonial Search Terms -->
+                    <div class="seo-column">
+                        <h4>Local & Specific Searches</h4>
+                        <ul>
+                            <li>delhi NCR dating singles</li><li>mumbai local matchmaking</li><li>bangalore techie dating</li><li>pune singles matchmaker</li><li>hyderabad matrimonial Bureau</li><li>chennai match finder</li><li>kolkata matrimonial registry</li><li>ahmedabad shaadi search</li><li>surat dating portal</li><li>jaipur matchmakers</li><li>lucknow matrimonial site</li><li>kanpur shaadi bureau</li><li>nagpur dating app</li><li>patna matrimonial app</li><li>bhopal singles matching</li><li>ludhiana elite matrimony</li><li>amritsar shaadi matches</li><li>jalandhar NRI matrimony</li><li>chandigarh dating community</li><li>gurugram corporate dating</li><li>noida matchmaking app</li><li>faridabad singles</li><li>ghaziabad shaadi registry</li><li>thane local dating</li><li>navi mumbai matchmaking</li><li>pimpri chinchwad dating</li><li>visakhapatnam matrimony</li><li>vadodara shaadi portal</li><li>rajkot matchmaker</li><li>varanasi matrimonial search</li><li>allahabad shaadi bureau</li><li>agra singles match</li><li>meerut matrimonial app</li><li>nasik local dating</li><li>jabalpur shaadi matches</li>
+                            <!-- Bulk keywords for tag volume -->
+                            <li>jamshedpur matrimonial registry</li><li>asansol shaadi portal</li><li>dhanbad singles search</li><li>faridabad dating apps</li><li>allahabad local singles</li><li>amritsar local matchmaking</li><li>coimbatore matrimony portal</li><li>madurai shaadi match</li><li>mysore dating app</li><li>kochi premium matrimony</li><li>trivandrum matchmakers</li><li>kozhikode shaadi register</li><li>guwahati dating portal</li><li>bhubaneswar matrimonial site</li><li>cuttack shaadi bureau</li><li>ranchi local singles</li><li>raipur matrimonial registry</li><li>gwalior match finder</li><li>indore dating community</li><li>jodhpur shaadi bureau</li><li>udaipur romantic matches</li><li>kota single students dating</li><li>aligarh matrimonial portal</li><li>moradabad shaadi search</li><li>bareilly matchmaking app</li><li>gorakhpur matrimony site</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Footer Mega-list of 900+ additional keywords for indexing depth -->
+                <div class="seo-mega-tags">
+                    <h5>Complete Search Term Index</h5>
+                    <p>
+                        matchly app review, matchly download apk, matchly playstore download, matchly ios app, matchly app store, matchly login issues, matchly account recovery, matchly dating tips, matchly matrimonial, matchmaking for busy professionals, matchmaking for startup founders, dating for entrepreneurs, matrimony for doctors, matrimony for chartered accountants, matrimony for lawyers, matrimony for software engineers, matrimony for defense personnel, matrimony for navy officers, matrimony for army officers, matrimony for airforce officers, matrimony for bank employees, matrimony for teachers, matrimony for college students, secure shaadi, safe bride search, safe groom search, verified marriage matchmaking, matchly premium subscription, matchly cost, matchly free trial, matchly vs tinder, matchly vs bumble, matchly vs shaadi, matchly vs jeevansathi, matchly vs bharatmatrimony, local matches, finding true love, long distance relationships, dating apps with video chat, voice intro dating, ice breaker games, match score accuracy, dating profile review, profile builder assistant, dating app for extroverts, dating app for introverts, senior dating india, mature dating matrimony, second shaadi, remarriage matchmaking, single mother dating, single father dating, dating after 30, dating after 40, dating after 50, relationship values match, kundli matching app, guna milan online, manglik matrimonial matches, non manglik bride search, horoscope matchmaking free, dynamic chat bubbls, secure image sharing, view once photo dating, screen lock app lock matchly, mpin setup dating, secure app login, verify profile photo, live selfie verification, photo verification badge, blue tick dating app, top review dating app, dating app testimonials, marriage success stories, love stories matchly, matchly wedding, find soulmate near me, find match online, online dating safety guidelines, dating scam prevention, report fake account, block user on matchly, delete matchly account, pause dating profile, matches of the day, top matches weekly, daily matching suggestions, location search radius, age range filter, height preference filter, education filter matrimony, religion filter matrimony, mother tongue filter, marathi dating, hindi dating, punjabi dating, bengali dating, gujarati dating, tamil dating, telugu dating, kannada dating, malayalam dating, odia dating, assamese dating, urdu dating, english dating, NRI dating usa, NRI dating uk, NRI dating canada, NRI dating australia, NRI dating gulf, NRI matrimony usa, NRI matrimony canada, NRI matrimony uk, NRI matrimony australia, NRI matrimony dubai, global matches, international matchmaking, cross cultural dating, intercaste marriage matchmaking, interreligion dating app, progressive matrimonial app, modern family matrimony, traditional value dating, vegetarian singles dating, non vegetarian matchmaking, fitness enthusiast dating, gym lover matchmaking, travel partner dating app, foodie singles matching, music lovers dating, movie buffs matchmaking, book lovers dating app, pet owner dating, animal lovers matchmaking, gaming singles dating, tech lovers matchmaking, sports fan dating, art lover matchmaking, nature lover dating app, adventure dating portal, hiking partners matchmaking, dating app with filters, matrimony app with privacy, best design dating app, responsive landing page matchly, matchly landing page render, matchly static site deployment, render static site matchly, app-ads.txt verification matchly, google admob crawler check, authorize ads matchly, real ads matchly app, matchly monetize, matchly ad units, banner ad matchly, interstitial ad matchly, rewarded ad matchly, admob app ID matchly, matchly gdlsofts, gdlsofts apps, matchly matrimonial delhi, matchly matrimony mumbai, matchly shaadi bangalore, matchly relationship tips, matchly secure chatting, matchly matches near me, local dating website, matrimony sites free registry, matrimonial registration no cost, free bride search, free groom search, find lifetime partner, find husband online, find wife online, dating app for serious people, matrimony for modern indians, shaadi application for android, shaadi application for ios, matchly developer website, matchly domain registration, gdlsofts com domain, render custom domain matchly, app-ads txt render static, matchly dating service, matchly matrimony service, matchly agency matchmaking, matchly customer support, matchly help center, matchly contact email, matchly developer address, matchly privacy policy, matchly terms of service, matchly legal documentation, matchly disclaimer, matchly cookie policy, matchly search engine indexing, matchly sitemap, matchly robots txt, matchly meta keywords.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Footer -->
     <footer>
         <div class="footer-container">
-            <div class="footer-logo">
-                <div class="logo-icon">
-                    <ion-icon name="heart"></ion-icon>
+            <div class="footer-brand-area">
+                <div class="logo">
+                    <img src="matchly_logo.png" alt="Matchly Logo" class="logo-img">
+                    <span>Matchly</span>
                 </div>
-                <span>Matchly</span>
+                <p>The premium hybrid matchmaking network built around secure chats, verified profiles, and deep algorithm compatibility.</p>
             </div>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="mailto:support@gdlsofts.com">Contact Support</a>
+            
+            <div class="footer-nav-links">
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Safety & Legal</h5>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Safety Center</a>
+                    <a href="app-ads.txt">AdMob Verification</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Community</h5>
+                    <a href="#">Success Stories</a>
+                    <a href="#">Dating Advice</a>
+                    <a href="#">Support Forum</a>
+                </div>
             </div>
-            <p class="copyright">&copy; 2026 GDLSofts. All rights reserved. &bull; <a href="app-ads.txt" style="color: #94A3B8; text-decoration: none;">AdMob app-ads.txt</a></p>
+            
+            <p class="copyright">&copy; 2026 GDLSofts. All rights reserved. &bull; Made with 💖 for genuine connections.</p>
         </div>
     </footer>
+
+    <!-- Day/Night Toggle & Collapsible Index Scripts -->
+    <script>
+        // Theme Toggle Script
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.className = savedTheme;
+        } else {
+            body.className = 'dark-theme'; // Default to dark theme
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (body.classList.contains('dark-theme')) {
+                body.classList.replace('dark-theme', 'light-theme');
+                localStorage.setItem('theme', 'light-theme');
+            } else {
+                body.classList.replace('light-theme', 'dark-theme');
+                localStorage.setItem('theme', 'dark-theme');
+            }
+        });
+
+        // SEO Collapsible Panel Script
+        const seoToggleBtn = document.getElementById('seo-toggle');
+        const seoContentPanel = document.getElementById('seo-content');
+        const chevronIcon = seoToggleBtn.querySelector('.chevron-icon');
+
+        seoToggleBtn.addEventListener('click', () => {
+            if (seoContentPanel.classList.contains('collapsed')) {
+                seoContentPanel.classList.remove('collapsed');
+                chevronIcon.setAttribute('name', 'chevron-up-outline');
+            } else {
+                seoContentPanel.classList.add('collapsed');
+                chevronIcon.setAttribute('name', 'chevron-down-outline');
+            }
+        });
+    </script>
 </body>
 </html>
