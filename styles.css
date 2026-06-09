@@ -2,30 +2,34 @@
 
 /* 🎨 1. THEME VARIABLES */
 .dark-theme {
-    --bg-color: #0B0E17;
-    --navbar-bg: rgba(11, 14, 23, 0.75);
-    --text-color: #F8FAFC;
-    --text-muted: #94A3B8;
-    --card-bg: rgba(30, 41, 59, 0.45);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --border-color: #334155;
-    --shadow-color: rgba(0, 0, 0, 0.4);
-    --success-card-hover-border: rgba(255, 75, 125, 0.3);
+    --bg-color: #0B0716; /* Midnight Velvet Indigo */
+    --bg-gradient: linear-gradient(135deg, #0A0515 0%, #150C28 50%, #0D081D 100%);
+    --navbar-bg: rgba(11, 7, 22, 0.82);
+    --text-color: #FFF0F5; /* Soft Rose White */
+    --text-muted: #9E91B2;
+    --card-bg: rgba(22, 15, 41, 0.65);
+    --card-border: rgba(255, 75, 125, 0.12);
+    --border-color: #24193C;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --success-card-hover-border: rgba(255, 75, 125, 0.5);
+    --glow-color: rgba(255, 75, 125, 0.25);
     
     --sun-display: block;
     --moon-display: none;
 }
 
 .light-theme {
-    --bg-color: #FAFAFA;
-    --navbar-bg: rgba(250, 250, 250, 0.8);
-    --text-color: #2D2D2D;
-    --text-muted: #757575;
-    --card-bg: rgba(255, 255, 255, 0.9);
-    --card-border: rgba(0, 0, 0, 0.06);
-    --border-color: #F0F0F0;
-    --shadow-color: rgba(233, 64, 87, 0.05);
-    --success-card-hover-border: rgba(233, 64, 87, 0.2);
+    --bg-color: #FFF5F6; /* Romantic Rose Blush */
+    --bg-gradient: linear-gradient(135deg, #FFF0F2 0%, #FFFDF9 50%, #FFF4F6 100%);
+    --navbar-bg: rgba(255, 255, 255, 0.88);
+    --text-color: #3D2331; /* Deep Mulberry Chocolate */
+    --text-muted: #8E7180;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --card-border: rgba(255, 75, 125, 0.12);
+    --border-color: #FFE5EB;
+    --shadow-color: rgba(255, 75, 125, 0.08);
+    --success-card-hover-border: rgba(255, 75, 125, 0.35);
+    --glow-color: rgba(255, 75, 125, 0.15);
     
     --sun-display: none;
     --moon-display: block;
@@ -35,11 +39,11 @@
     --primary-color: #FF4B7D;
     --primary-dark: #E6396A;
     --accent-color: #8A2387;
-    --gradient-match: linear-gradient(135deg, #E94057 0%, #F27121 100%);
+    --gradient-match: linear-gradient(135deg, #E94057 0%, #FF6B6B 50%, #F27121 100%);
     --gradient-premium: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
-    --transition-speed: 0.3s;
+    --transition-speed: 0.5s;
 }
 
 * {
@@ -50,36 +54,96 @@
 }
 
 body {
+    background: var(--bg-gradient);
     background-color: var(--bg-color);
+    background-attachment: fixed;
     color: var(--text-color);
     font-family: var(--font-body);
     overflow-x: hidden;
     line-height: 1.6;
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, background var(--transition-speed) ease;
+}
+
+/* 🌸 Romantic Floating Elements (Movie style animations) */
+.romantic-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.rom-item {
+    position: absolute;
+    bottom: -50px;
+    font-size: 24px;
+    opacity: 0;
+    will-change: transform, opacity;
+    animation: floatUp 12s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0) scale(0.6) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: var(--op, 0.45);
+    }
+    85% {
+        opacity: var(--op, 0.45);
+    }
+    100% {
+        transform: translateY(-105vh) translateX(var(--sway-x, 40px)) scale(1.1) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 🎆 Theme Change Burst Particle styling */
+.theme-burst-particle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+    font-size: 16px;
+    animation: themeBurstMove 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes themeBurstMove {
+    0% {
+        transform: translate(0, 0) scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(0.2);
+        opacity: 0;
+    }
 }
 
 /* 🌀 Background Ambient Blurs */
 .bg-glow {
     position: fixed;
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 700px;
     border-radius: 50%;
-    filter: blur(150px);
+    filter: blur(160px);
     z-index: -2;
-    opacity: 0.25;
+    opacity: 0.3;
     pointer-events: none;
+    transition: opacity var(--transition-speed) ease, background var(--transition-speed) ease;
 }
 
 .bg-glow-1 {
     top: -10%;
     right: -10%;
-    background: radial-gradient(circle, #E94057 0%, rgba(233, 64, 87, 0) 70%);
+    background: radial-gradient(circle, var(--primary-color) 0%, rgba(255, 75, 125, 0) 70%);
 }
 
 .bg-glow-2 {
-    bottom: -10%;
+    bottom: -15%;
     left: -10%;
-    background: radial-gradient(circle, #8A2387 0%, rgba(138, 43, 226, 0) 70%);
+    background: radial-gradient(circle, var(--accent-color) 0%, rgba(138, 35, 135, 0) 70%);
 }
 
 .bg-grid {
@@ -89,9 +153,9 @@ body {
     width: 100%;
     height: 100%;
     background-image: 
-        linear-gradient(rgba(233, 64, 87, 0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(233, 64, 87, 0.015) 1px, transparent 1px);
-    background-size: 60px 60px;
+        linear-gradient(rgba(255, 75, 125, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 75, 125, 0.02) 1px, transparent 1px);
+    background-size: 65px 65px;
     z-index: -1;
     pointer-events: none;
 }
@@ -106,7 +170,7 @@ body {
     background-color: var(--navbar-bg);
     border-bottom: 1px solid var(--card-border);
     z-index: 100;
-    transition: background-color var(--transition-speed) ease;
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
 .nav-container {
@@ -228,6 +292,7 @@ body {
     background: var(--card-bg);
     color: var(--text-color);
     border: 1px solid var(--card-border);
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
 .btn-secondary:hover {
@@ -260,7 +325,7 @@ body {
 
 /* 🚀 Hero Section Layout */
 .hero-section {
-    padding: 80px 24px 100px 24px;
+    padding: 100px 24px 120px 24px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -328,6 +393,7 @@ body {
     border-radius: 16px;
     width: fit-content;
     box-shadow: 0 10px 25px var(--shadow-color);
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
 .stat-item h3 {
@@ -394,6 +460,7 @@ body {
     border-radius: 20px;
     padding: 16px;
     box-shadow: 0 20px 45px var(--shadow-color);
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
 .profile-left {
@@ -418,7 +485,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 .profile-details h3 {
@@ -457,6 +526,7 @@ body {
     box-shadow: 0 15px 35px var(--shadow-color);
     z-index: 6;
     animation: float1 7s ease-in-out infinite;
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
 .chat-header {
@@ -498,6 +568,7 @@ body {
     color: var(--text-color);
     align-self: flex-start;
     border-bottom-left-radius: 3px;
+    transition: background-color var(--transition-speed) ease;
 }
 
 .msg-me {
@@ -519,6 +590,7 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 0 10px 20px var(--shadow-color);
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
 .bubble-1 {
@@ -545,6 +617,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     border-top: 1px solid var(--border-color);
+    transition: border-color var(--transition-speed) ease;
 }
 
 .success-grid {
@@ -559,7 +632,7 @@ body {
     border-radius: 28px;
     padding: 0;
     box-shadow: 0 10px 30px var(--shadow-color);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -613,7 +686,7 @@ body {
 
 /* Chat dialog within stories */
 .story-chat-preview {
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.04);
     border: 1px solid var(--card-border);
     padding: 16px;
     border-radius: 16px;
@@ -621,6 +694,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.dark-theme .story-chat-preview {
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .story-bubble {
@@ -633,6 +710,7 @@ body {
     border-bottom-left-radius: 2px;
     max-width: 90%;
     align-self: flex-start;
+    transition: background-color var(--transition-speed) ease;
 }
 
 .story-bubble strong {
@@ -665,6 +743,7 @@ body {
     font-size: 12px;
     font-weight: 700;
     color: var(--primary-color);
+    transition: border-color var(--transition-speed) ease;
 }
 
 /* 🎨 Features Section */
@@ -673,6 +752,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     border-top: 1px solid var(--border-color);
+    transition: border-color var(--transition-speed) ease;
 }
 
 .section-title-wrap {
@@ -707,7 +787,7 @@ body {
     border-radius: 24px;
     padding: 40px 32px;
     box-shadow: 0 4px 20px var(--shadow-color);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
 .feature-card:hover {
@@ -750,6 +830,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     border-top: 1px solid var(--border-color);
+    transition: border-color var(--transition-speed) ease;
 }
 
 .steps-grid {
@@ -766,6 +847,7 @@ body {
     padding: 40px 32px;
     text-align: center;
     box-shadow: 0 4px 20px var(--shadow-color);
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
 .step-badge {
@@ -807,6 +889,7 @@ body {
     border-bottom: 1px solid var(--border-color);
     padding: 80px 24px;
     text-align: center;
+    transition: border-color var(--transition-speed) ease;
 }
 
 .banner-inner {
@@ -837,6 +920,11 @@ body {
 .seo-directory-section {
     padding: 60px 24px;
     border-top: 1px solid var(--border-color);
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: border-color var(--transition-speed) ease;
+}
+
+.dark-theme .seo-directory-section {
     background-color: rgba(0, 0, 0, 0.15);
 }
 
@@ -859,7 +947,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease, background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
 .seo-toggle-btn:hover {
@@ -892,6 +980,7 @@ body {
     gap: 24px;
     padding-bottom: 30px;
     border-bottom: 1px solid var(--border-color);
+    transition: border-color var(--transition-speed) ease;
 }
 
 .seo-column h4 {
@@ -943,6 +1032,7 @@ body {
 footer {
     padding: 80px 24px 60px 24px;
     border-top: 1px solid var(--border-color);
+    transition: border-color var(--transition-speed) ease;
 }
 
 .footer-container {
@@ -1001,6 +1091,7 @@ footer {
     text-align: center;
     font-size: 13px;
     color: var(--text-muted);
+    transition: border-color var(--transition-speed) ease;
 }
 
 /* 💫 Animations */
@@ -1114,3 +1205,254 @@ footer {
         gap: 24px;
     }
 }
+
+/* 💖 11. INTERACTIVE LOVE CALCULATOR & GAMES */
+.interactive-section {
+    padding: 90px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.interactive-container {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.badge-mini {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(255, 75, 125, 0.08);
+    border: 1px solid rgba(255, 75, 125, 0.2);
+    border-radius: 30px;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+}
+
+.interactive-header h2 {
+    font-family: var(--font-heading);
+    font-size: 38px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+}
+
+.interactive-header p {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.calc-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 28px;
+    padding: 40px 32px;
+    box-shadow: 0 15px 40px var(--shadow-color);
+    position: relative;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.calc-hearts-decor {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+    font-size: 26px;
+}
+
+.decor-heart {
+    animation: simpleSway 4s ease-in-out infinite alternate;
+}
+
+.sway-1 { animation-delay: 0s; }
+.sway-2 { animation-delay: 1.5s; }
+.sway-3 { animation-delay: 0.8s; }
+
+@keyframes simpleSway {
+    0% { transform: translateY(0) rotate(-10deg); }
+    100% { transform: translateY(-10px) rotate(10deg); }
+}
+
+.calc-inputs-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.love-input {
+    background: rgba(0, 0, 0, 0.03);
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-family: var(--font-body);
+    color: var(--text-color);
+    width: 100%;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.dark-theme .love-input {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.love-input:focus {
+    border-color: var(--primary-color);
+    background: rgba(255, 75, 125, 0.02);
+    box-shadow: 0 0 12px rgba(255, 75, 125, 0.15);
+}
+
+.heart-separator {
+    font-size: 32px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart-pulse-active {
+    animation: heartPulseIconEffect 1.2s infinite ease-in-out;
+}
+
+@keyframes heartPulseIconEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); filter: drop-shadow(0 0 8px rgba(255, 75, 125, 0.6)); }
+    100% { transform: scale(1); }
+}
+
+.calculate-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Result panel reveal animation */
+.calc-result-panel {
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px dashed var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: scaleInResult 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.calc-result-panel.hidden {
+    display: none;
+}
+
+@keyframes scaleInResult {
+    0% { transform: scale(0.85); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.score-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+    transition: stroke-dashoffset 0.35s;
+    transform-origin: 50% 50%;
+}
+
+.score-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+.result-verdict {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.result-message {
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.6;
+}
+
+/* Burst heart particle for explosion */
+.burst-heart-particle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 100;
+    font-size: 18px;
+    animation: heartExplodeMove 1s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes heartExplodeMove {
+    0% {
+        transform: translate(0, 0) scale(0.5) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(1.3) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .calc-inputs-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .heart-separator {
+        transform: rotate(90deg);
+        margin: 6px 0;
+    }
+}
+

@@ -28,11 +28,21 @@
     
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark-theme">
+<body class="light-theme">
     <!-- Ambient Blur Backgrounds -->
     <div class="bg-glow bg-glow-1"></div>
     <div class="bg-glow bg-glow-2"></div>
     <div class="bg-grid"></div>
+
+    <!-- Floating Romantic Hearts/Stars (Animated Lovable Feel) -->
+    <div class="romantic-elements">
+        <span class="rom-item heart-1">❤️</span>
+        <span class="rom-item heart-2">💖</span>
+        <span class="rom-item heart-3">🌸</span>
+        <span class="rom-item star-1">✨</span>
+        <span class="rom-item star-2">✨</span>
+        <span class="rom-item heart-4">💕</span>
+    </div>
 
     <!-- Transparent Fixed Header -->
     <header class="navbar">
@@ -108,7 +118,7 @@
                 
                 <!-- Matching Floating Cards (Matchly Profile Style) -->
                 <div class="floating-profile profile-left">
-                    <div class="profile-avatar">👩</div>
+                    <div class="profile-avatar">Aanya</div>
                     <div class="profile-details">
                         <h3>Sneha Sharma, 25</h3>
                         <p>📍 Delhi &bull; Professional</p>
@@ -117,7 +127,7 @@
                 </div>
                 
                 <div class="floating-profile profile-right">
-                    <div class="profile-avatar">👨</div>
+                    <div class="profile-avatar">Kabir</div>
                     <div class="profile-details">
                         <h3>Rohan Mehta, 27</h3>
                         <p>📍 Bangalore &bull; Engineer</p>
@@ -141,6 +151,62 @@
                 <div class="mini-bubble bubble-1"><ion-icon name="chatbubble-ellipses" style="color: #FF4B7D;"></ion-icon></div>
                 <div class="mini-bubble bubble-2"><ion-icon name="checkmark-circle" style="color: #00BFA5;"></ion-icon></div>
                 <div class="mini-bubble bubble-3"><span style="font-size: 16px;">💖</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Match Compatibility Section -->
+    <section class="interactive-section">
+        <div class="interactive-container">
+            <div class="interactive-header">
+                <span class="badge-mini">💖 Matchly Special</span>
+                <h2>Are You Destined To Be Together?</h2>
+                <p>Enter your names to test your love compatibility score using our advanced matchmaking algorithm!</p>
+            </div>
+            
+            <div class="calc-card">
+                <div class="calc-hearts-decor">
+                    <span class="decor-heart sway-1">❤️</span>
+                    <span class="decor-heart sway-2">💖</span>
+                    <span class="decor-heart sway-3">💕</span>
+                </div>
+                
+                <div class="calc-inputs-row">
+                    <div class="input-group">
+                        <label for="name1">Your Name</label>
+                        <input type="text" id="name1" placeholder="e.g. Rohan" class="love-input">
+                    </div>
+                    <div class="heart-separator">
+                        <ion-icon name="heart" class="heart-pulse-active"></ion-icon>
+                    </div>
+                    <div class="input-group">
+                        <label for="name2">Partner's Name</label>
+                        <input type="text" id="name2" placeholder="e.g. Sneha" class="love-input">
+                    </div>
+                </div>
+                
+                <button onclick="calculateCompatibility()" class="btn btn-primary calculate-btn">
+                    <span>Calculate Compatibility</span>
+                    <ion-icon name="sparkles-outline"></ion-icon>
+                </button>
+                
+                <div id="calc-result" class="calc-result-panel hidden">
+                    <div class="score-circle">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring__circle-bg" stroke="rgba(255, 75, 125, 0.1)" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+                            <circle class="progress-ring__circle" stroke="url(#loveGradient)" stroke-width="8" stroke-dasharray="326.7" stroke-dashoffset="326.7" fill="transparent" r="52" cx="60" cy="60"/>
+                            <defs>
+                                <linearGradient id="loveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#E94057" />
+                                    <stop offset="100%" stop-color="#F27121" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="score-text">0%</div>
+                    </div>
+                    <h3 class="result-verdict">Calculating...</h3>
+                    <p class="result-message">Our matching engine is analyzing your profiles.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -375,21 +441,24 @@
         </div>
     </footer>
 
-    <!-- Day/Night Toggle & Collapsible Index Scripts -->
+    <!-- Day/Night Toggle, Collapsible Index, Compatibility Game, and Romantic Particle Scripts -->
     <script>
         // Theme Toggle Script
         const themeToggleBtn = document.getElementById('theme-toggle');
         const body = document.body;
 
-        // Load saved theme
+        // Load saved theme (default to light-theme)
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             body.className = savedTheme;
         } else {
-            body.className = 'dark-theme'; // Default to dark theme
+            body.className = 'light-theme'; // Default theme is light-theme
         }
 
         themeToggleBtn.addEventListener('click', () => {
+            // Creative theme transition visual burst
+            triggerThemeTransitionBurst();
+            
             if (body.classList.contains('dark-theme')) {
                 body.classList.replace('dark-theme', 'light-theme');
                 localStorage.setItem('theme', 'light-theme');
@@ -398,6 +467,33 @@
                 localStorage.setItem('theme', 'dark-theme');
             }
         });
+
+        function triggerThemeTransitionBurst() {
+            const burstCount = 15;
+            for (let i = 0; i < burstCount; i++) {
+                const burst = document.createElement('span');
+                burst.className = 'theme-burst-particle';
+                burst.innerText = body.classList.contains('dark-theme') ? '✨' : '💖';
+                
+                const rect = themeToggleBtn.getBoundingClientRect();
+                const scrollX = window.scrollX || window.pageXOffset;
+                const scrollY = window.scrollY || window.pageYOffset;
+                
+                burst.style.left = `${rect.left + rect.width / 2 + scrollX}px`;
+                burst.style.top = `${rect.top + rect.height / 2 + scrollY}px`;
+                
+                const angle = (i / burstCount) * Math.PI * 2;
+                const speed = 40 + Math.random() * 60;
+                const tx = Math.cos(angle) * speed;
+                const ty = Math.sin(angle) * speed;
+                
+                burst.style.setProperty('--tx', `${tx}px`);
+                burst.style.setProperty('--ty', `${ty}px`);
+                
+                document.body.appendChild(burst);
+                setTimeout(() => burst.remove(), 800);
+            }
+        }
 
         // SEO Collapsible Panel Script
         const seoToggleBtn = document.getElementById('seo-toggle');
@@ -413,6 +509,174 @@
                 chevronIcon.setAttribute('name', 'chevron-down-outline');
             }
         });
+
+        // Dynamic Romantic Particle Generator (Lovable movie style)
+        function createRomanticParticles() {
+            const container = document.querySelector('.romantic-elements');
+            if (!container) return;
+            
+            container.innerHTML = ''; // Clean initial elements
+            
+            const symbols = ['❤️', '💖', '💕', '✨', '🌸', '🌹', '💗', '⭐'];
+            
+            // Create a density of initial scattered elements
+            for (let i = 0; i < 30; i++) {
+                spawnParticle(true);
+            }
+            
+            // Continuously spawn organic flow
+            setInterval(() => {
+                spawnParticle(false);
+            }, 350);
+            
+            function spawnParticle(isInitial) {
+                const particle = document.createElement('span');
+                particle.className = 'rom-item';
+                particle.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+                
+                const size = Math.random() * 22 + 10; // 10px to 32px
+                const left = Math.random() * 100;
+                const duration = Math.random() * 10 + 7; // 7s to 17s
+                const delay = isInitial ? Math.random() * -15 : 0;
+                const opacity = Math.random() * 0.45 + 0.15; // 0.15 to 0.60
+                
+                particle.style.fontSize = `${size}px`;
+                particle.style.left = `${left}%`;
+                particle.style.animationDuration = `${duration}s`;
+                if (delay !== 0) {
+                    particle.style.animationDelay = `${delay}s`;
+                }
+                particle.style.opacity = opacity;
+                
+                // Set custom properties for diagonal sway
+                const swayAmount = Math.random() * 100 - 50; // -50px to 50px
+                particle.style.setProperty('--sway-x', `${swayAmount}px`);
+                
+                container.appendChild(particle);
+                
+                // Garbage collect particles
+                setTimeout(() => {
+                    particle.remove();
+                }, (duration + (delay < 0 ? 0 : delay)) * 1000);
+            }
+        }
+        
+        // Matchly Compatibility Meter Calculator
+        function calculateCompatibility() {
+            const name1 = document.getElementById('name1').value.trim();
+            const name2 = document.getElementById('name2').value.trim();
+            
+            if (!name1 || !name2) {
+                alert('Please enter both names to find your compatibility score! 💖');
+                return;
+            }
+            
+            const resultPanel = document.getElementById('calc-result');
+            resultPanel.classList.remove('hidden');
+            
+            // Scroll results into viewport smoothly
+            resultPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            const verdict = resultPanel.querySelector('.result-verdict');
+            const message = resultPanel.querySelector('.result-message');
+            const scoreText = resultPanel.querySelector('.score-text');
+            const circle = resultPanel.querySelector('.progress-ring__circle');
+            
+            verdict.innerText = 'Calculating Synergy...';
+            message.innerText = 'Our matchmaking engine is analyzing your dynamic attributes...';
+            scoreText.innerText = '0%';
+            
+            // Set circle progress attributes
+            const radius = circle.r.baseVal.value;
+            const circumference = radius * 2 * Math.PI;
+            circle.style.strokeDasharray = `${circumference} ${circumference}`;
+            circle.style.strokeDashoffset = circumference;
+            
+            // Calculate a deterministic score from input names (so same names yield same score)
+            const combined = (name1 + name2).toLowerCase().replace(/[^a-z]/g, '');
+            let charSum = 0;
+            for (let i = 0; i < combined.length; i++) {
+                charSum += combined.charCodeAt(i);
+            }
+            
+            // Encouraging score range between 78% and 99%
+            const finalScore = 78 + (charSum % 22);
+            
+            // Counter animation
+            const duration = 2000; // 2 seconds
+            const interval = 25; // 25ms step
+            const steps = duration / interval;
+            const scoreIncrement = finalScore / steps;
+            
+            let currentStep = 0;
+            const animInterval = setInterval(() => {
+                currentStep++;
+                const currentScore = Math.min(finalScore, Math.round(scoreIncrement * currentStep));
+                scoreText.innerText = `${currentScore}%`;
+                
+                const targetOffset = circumference - (circumference * currentScore / 100);
+                circle.style.strokeDashoffset = targetOffset;
+                
+                if (currentStep >= steps) {
+                    clearInterval(animInterval);
+                    scoreText.innerText = `${finalScore}%`;
+                    circle.style.strokeDashoffset = circumference - (circumference * finalScore / 100);
+                    
+                    // Display movie-like lovable verdicts
+                    if (finalScore >= 95) {
+                        verdict.innerText = 'Perfect Movie Match! 💍💘';
+                        message.innerText = `${name1} & ${name2} have an absolute fairy-tale level of compatibility. The stars are aligned perfectly for a beautiful future together.`;
+                    } else if (finalScore >= 88) {
+                        verdict.innerText = 'Highly Compatible Synergy! ✨🌸';
+                        message.innerText = `${name1} & ${name2} share wonderful values, strong emotional triggers, and outstanding common ground. You are bound to connect deeply.`;
+                    } else {
+                        verdict.innerText = 'Lovely Romantic Chemistry! 💖🥂';
+                        message.innerText = `Great chemistry detected! ${name1} and ${name2} have strong attraction score indicators and fantastic baseline values.`;
+                    }
+                    
+                    // Trigger dynamic heart burst explosion on score reveal
+                    triggerHeartExplosion();
+                }
+            }, interval);
+        }
+        
+        function triggerHeartExplosion() {
+            const container = document.querySelector('.interactive-section');
+            if (!container) return;
+            
+            const btn = document.querySelector('.calculate-btn');
+            const rect = btn.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+            
+            const startX = rect.left - containerRect.left + rect.width / 2;
+            const startY = rect.top - containerRect.top + rect.height / 2;
+            
+            for (let i = 0; i < 24; i++) {
+                const particle = document.createElement('span');
+                particle.className = 'burst-heart-particle';
+                particle.innerText = ['❤️', '💖', '💕', '✨', '🌸', '🌹'][Math.floor(Math.random() * 6)];
+                
+                particle.style.left = `${startX}px`;
+                particle.style.top = `${startY}px`;
+                
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 60 + Math.random() * 120;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                
+                particle.style.setProperty('--tx', `${tx}px`);
+                particle.style.setProperty('--ty', `${ty}px`);
+                
+                container.appendChild(particle);
+                
+                setTimeout(() => {
+                    particle.remove();
+                }, 1000);
+            }
+        }
+        
+        // Start romantic floaters on window load
+        window.addEventListener('DOMContentLoaded', createRomanticParticles);
     </script>
 </body>
 </html>
