@@ -1136,73 +1136,163 @@ footer {
     100% { transform: translateY(0px) rotate(1.5deg); }
 }
 
-/* 📱 Responsive Queries */
+/* 📱 10. RESPONSIVE DESIGN FOR ALL DEVICES (TV, LAPTOP, DESKTOP, TABLET, MOBILE) */
+
+/* 📺 A. Ultra-Large Displays & TVs (>= 1600px) */
+@media (min-width: 1600px) {
+    .hero-container, .nav-container, .success-section, .features-section, .how-section, .interactive-section, .seo-container, .footer-container {
+        max-width: 1440px;
+    }
+    .hero-content h1 {
+        font-size: 76px;
+    }
+    body {
+        font-size: 18px;
+    }
+}
+
+/* 💻 B. Standard Laptops & Large Tablets (993px - 1199px) */
+@media (max-width: 1199px) {
+    .hero-container {
+        gap: 40px;
+    }
+    .hero-content h1 {
+        font-size: 52px;
+    }
+}
+
+/* 📠 C. Small Laptops & Tablets (768px - 992px) */
 @media (max-width: 992px) {
     .hero-container {
         grid-template-columns: 1fr;
         gap: 50px;
         text-align: center;
     }
-    
     .hero-content {
         align-items: center;
     }
-    
     .hero-content h1 {
-        font-size: 44px;
+        font-size: 48px;
     }
-    
     .hero-stats {
         margin: 0 auto 30px auto;
     }
-    
     .success-grid, .features-grid, .steps-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 30px;
+        max-width: 600px;
+        margin: 0 auto;
     }
-    
     .seo-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
     .footer-container {
         grid-template-columns: 1fr;
         gap: 40px;
+        text-align: center;
     }
-    
+    .footer-brand-area {
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+    }
+    .footer-nav-links {
+        justify-content: center;
+    }
     .copyright {
         grid-column: 1;
     }
 }
 
-@media (max-width: 600px) {
+/* 📱 D. Portrait Tablets & Mobile Devices (481px - 767px) */
+@media (max-width: 767px) {
     .nav-menu {
-        display: none; /* simple burger fallback */
+        display: none; /* Collapsed on mobile */
     }
-    
-    .logo span {
-        font-size: 22px;
+    .nav-container {
+        padding: 12px 16px;
     }
-    
+    .hero-section {
+        padding: 60px 16px 80px 16px;
+    }
     .hero-content h1 {
-        font-size: 36px;
+        font-size: 40px;
     }
-    
+    .hero-stats {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
     .hero-visual {
-        height: 320px;
+        height: 380px;
     }
-    
     .floating-profile {
-        padding: 12px;
+        transform: scale(0.95);
     }
-    
+    .profile-left {
+        left: -5%;
+    }
+    .profile-right {
+        right: -5%;
+    }
+    .success-section, .features-section, .how-section, .interactive-section {
+        padding: 60px 16px;
+    }
+    .calc-inputs-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .heart-separator {
+        transform: rotate(90deg);
+        margin: 6px 0;
+    }
+}
+
+/* 📟 E. Ultra-Small Mobiles & Foldables (< 480px) */
+@media (max-width: 480px) {
+    .logo span {
+        font-size: 20px;
+    }
+    .logo-img {
+        height: 36px;
+        width: 36px;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+    .hero-stats {
+        padding: 12px;
+        gap: 12px;
+    }
+    .stat-item h3 {
+        font-size: 20px;
+    }
+    .hero-visual {
+        flex-direction: column;
+        height: auto;
+        gap: 12px;
+        padding-top: 20px;
+    }
+    .floating-profile {
+        position: relative;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+        animation: none !important;
+        margin-bottom: 12px;
+        width: 100%;
+    }
+    .glow-ring, .heart-pulse-icon, .floating-chat-bubble, .mini-bubble {
+        display: none !important; /* Hide overlays on very small mobile to fit layout */
+    }
     .seo-grid {
         grid-template-columns: 1fr;
     }
-    
     .footer-nav-links {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 20px;
     }
 }
 
