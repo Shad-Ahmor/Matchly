@@ -1213,28 +1213,105 @@ footer {
         padding: 12px 16px;
     }
     .hero-section {
-        padding: 60px 16px 80px 16px;
+        padding: 50px 16px 70px 16px;
     }
     .hero-content h1 {
         font-size: 40px;
+        text-align: center;
+    }
+    .hero-content p {
+        text-align: center;
+        font-size: 15px;
     }
     .hero-stats {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto 30px auto;
+        padding: 12px 16px;
+        gap: 8px;
+    }
+    .stat-item h3 {
+        font-size: 20px;
+    }
+    .stat-item p {
+        font-size: 9px;
+    }
+    .hero-cta {
+        width: 100%;
+        display: flex;
         justify-content: center;
-        gap: 16px;
+    }
+    .hero-cta .btn-primary {
+        width: 100%;
+        max-width: 290px;
+        padding: 14px 20px;
+        font-size: 14px;
+        animation: mobileCtaPulseMatchly 2s infinite ease-in-out;
+    }
+    @keyframes mobileCtaPulseMatchly {
+        0% { transform: scale(1); box-shadow: 0 8px 20px rgba(255, 75, 125, 0.3); }
+        50% { transform: scale(1.03); box-shadow: 0 12px 28px rgba(255, 75, 125, 0.55); }
+        100% { transform: scale(1); box-shadow: 0 8px 20px rgba(255, 75, 125, 0.3); }
     }
     .hero-visual {
         height: 380px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        overflow: visible;
+        margin-top: 20px;
+    }
+    .glow-ring {
+        width: 220px;
+        height: 220px;
+        position: absolute;
+    }
+    .heart-pulse-icon {
+        width: 90px;
+        height: 90px;
+        position: absolute;
+    }
+    .heart-pulse-icon ion-icon {
+        font-size: 46px;
     }
     .floating-profile {
-        transform: scale(0.95);
+        padding: 10px 14px;
+        border-radius: 16px;
+        max-width: 240px;
+        z-index: 5;
     }
     .profile-left {
-        left: -5%;
+        left: 0%;
+        top: 8%;
+        transform: scale(0.85) !important;
+        animation: floatLeftCard 6s ease-in-out infinite;
     }
     .profile-right {
-        right: -5%;
+        right: 0%;
+        top: 45%;
+        transform: scale(0.85) !important;
+        animation: floatRightCard 6s ease-in-out infinite;
     }
+    .floating-chat-bubble {
+        width: 240px;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%) scale(0.88);
+        z-index: 6;
+        animation: float1 7s ease-in-out infinite;
+    }
+    .mini-bubble {
+        width: 32px;
+        height: 32px;
+    }
+    .bubble-1 { left: 4%; top: 52%; }
+    .bubble-2 { right: 4%; top: 20%; }
+    .bubble-3 { display: none !important; }
+
     .success-section, .features-section, .how-section, .interactive-section {
         padding: 60px 16px;
     }
@@ -1268,34 +1345,36 @@ footer {
         width: 32px;
     }
     .hero-content h1 {
-        font-size: 32px;
+        font-size: 30px;
         letter-spacing: -1px;
     }
     .hero-stats {
-        padding: 12px;
-        gap: 12px;
+        padding: 10px;
+        gap: 6px;
     }
     .stat-item h3 {
-        font-size: 20px;
+        font-size: 18px;
+    }
+    .stat-item p {
+        font-size: 8px;
     }
     .hero-visual {
-        flex-direction: column;
-        height: auto;
-        gap: 12px;
-        padding-top: 20px;
+        height: 320px;
+        transform: scale(0.88);
+        margin-top: 10px;
     }
     .floating-profile {
-        position: relative;
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
-        transform: none !important;
-        animation: none !important;
-        margin-bottom: 12px;
-        width: 100%;
+        max-width: 200px;
     }
-    .glow-ring, .heart-pulse-icon, .floating-chat-bubble, .mini-bubble {
-        display: none !important; /* Hide overlays on very small mobile to fit layout */
+    .profile-left {
+        left: -8%;
+    }
+    .profile-right {
+        right: -8%;
+    }
+    .floating-chat-bubble {
+        width: 220px;
+        bottom: -15px;
     }
     .seo-grid {
         grid-template-columns: 1fr;
